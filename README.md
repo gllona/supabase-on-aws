@@ -92,71 +92,71 @@ This repo includes a template of starting Supabase stack on AWS via CloudFormati
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "CloudFormation",
-            "Effect": "Allow",
-            "Action": "cloudformation:*",
-            "Resource": "*"
-        },
-        {
-            "Sid": "supabase",
-            "Effect": "Allow",
-            "Action": [
-                "application-autoscaling:*",
-                "ec2:*",
-                "ecs:*",
-                "elasticloadbalancing:*",
-                "events:*",
-                "iam:*",
-                "lambda:*",
-                "logs:*",
-                "s3:*",
-                "secretsmanager:*",
-                "servicediscovery:*",
-                "ses:*",
-                "ssm:*",
-                "states:*",
-                "rds:*",
-                "route53:*",
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "supabase-cdn",
-            "Effect": "Allow",
-            "Action": [
-                "cloudfront:*",
-                "wafv2:Get*",
-                "wafv2:List*"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "cache-manager",
-            "Effect": "Allow",
-            "Action": [
-                "apigateway:*",
-                "lambda:*",
-                "logs:*",
-                "sqs:*",
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "supabase-studio",
-            "Effect": "Allow",
-            "Action": [
-                "amplify:*",
-                "codecommit:*",
-                "lambda:*",
-                "logs:*",
-                "sns:*"
-            ],
-            "Resource": "*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudFormation",
+      "Effect": "Allow",
+      "Action": "cloudformation:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "supabase",
+      "Effect": "Allow",
+      "Action": [
+        "application-autoscaling:*",
+        "ec2:*",
+        "ecs:*",
+        "elasticloadbalancing:*",
+        "events:*",
+        "iam:*",
+        "lambda:*",
+        "logs:*",
+        "s3:*",
+        "secretsmanager:*",
+        "servicediscovery:*",
+        "ses:*",
+        "ssm:*",
+        "states:*",
+        "rds:*",
+        "route53:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupabaseCdn",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:*",
+        "wafv2:Get*",
+        "wafv2:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CacheManager",
+      "Effect": "Allow",
+      "Action": [
+        "apigateway:*",
+        "lambda:*",
+        "logs:*",
+        "sqs:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SupabaseStudio",
+      "Effect": "Allow",
+      "Action": [
+        "amplify:*",
+        "codecommit:*",
+        "lambda:*",
+        "logs:*",
+        "sns:*"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 ```
 
