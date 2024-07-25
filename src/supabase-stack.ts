@@ -188,8 +188,16 @@ export class SupabaseStack extends FargateStack {
       }],
     });
 
+    var vpcId = this.node.tryGetContext('vpc_id')
+    var vpc
     /** VPC for Containers and Database */
-    const vpc = new Vpc(this, 'VPC', { natGateways: 1 });
+    if (vpcId !== undefined && vpcId.valueAsString != '') {
+      vpc = Vpc.fromLookup(this, "VPC", {
+        vpcId: this.node.tryGetContext('vpc_id')
+      })
+    } else {
+      vpc = new Vpc(this, 'VPC', { natGateways: 1 });
+    }
 
     /** Namespace name for CloudMap and ECS Service Connect */
     const namespaceName = 'supabase.internal';
