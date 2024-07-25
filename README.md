@@ -173,3 +173,12 @@ yarn install
 
 cdk deploy Supabase
 ```
+
+## Custom modifications
+
+### Configurable VPC ID
+
+feat: add vpc_id as a context parameter
+
+- Run `cdk deploy` if you want to deploy your Supabase within new VPC
+- Run `cdk deploy --context vpc_id=<some_vpcid>` if you want to use existing VPC
