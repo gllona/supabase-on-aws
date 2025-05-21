@@ -292,8 +292,8 @@ export class SupabaseStack extends FargateStack {
     const kong = new AutoScalingFargateService(this, 'Kong', {
       cluster,
       taskImageOptions: {
-        // image: ecs.ContainerImage.fromRegistry('public.ecr.aws/u3p7q2r8/kong:latest'),
-        image: ecs.ContainerImage.fromRegistry('public.ecr.aws/k1e4k0b3/kong:latest'), // FIX: new kong-template.yml version
+        image: ecs.ContainerImage.fromRegistry('public.ecr.aws/u3p7q2r8/kong:latest'),
+        // image: ecs.ContainerImage.fromRegistry('public.ecr.aws/k1e4k0b3/kong:latest'), // no more in AWS since 2025-05-21// FIX: new kong-template.yml version
         //image: ecs.ContainerImage.fromAsset('./containers/kong', { platform: Platform.LINUX_ARM64 }),
         containerPort: 8000,
         healthCheck: {
